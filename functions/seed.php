@@ -14,6 +14,9 @@ class Seed extends Connect{
         self::createUser();
         self::createContract();
         self::createContractor();
+        self::createBids();
+        self::createBidMember();
+        self::createEvaluationCriteria();
     }
 
     public function createDatabase(){
@@ -100,8 +103,24 @@ class Seed extends Connect{
     public function createBidMember(){
         $sql = "CREATE TABLE IF NOT EXISTS `bidmember` (
             `member_name` CHAR(145),
-            `member_id`
+            `member_id` INT(11) PRIMARY KEY,
+            `member_area` CHAR(45),
+            `member_level` CHAR(14),
+            `member_address` CHAR(255),
+            `date_registered` DATE
         )";
+        $this->link->query($sql);
+    }
+
+    public function createEvaluationCriteria(){
+        $sql = "CREATE TABLE IF NOT EXISTS `evaluationcriteria` (
+            `evaluation_criteria_id` INT(11) PRIMARY KEY,
+            `contracted` INT(11),
+            `criteria_name` CHAR(75),
+            `category` CHAR(45),
+            `criteria_weight` DECIMAL(10,0)
+        )";
+        $this->link->query($sql);
     }
 }
 
