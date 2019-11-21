@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +8,13 @@
 <body>
     <div class="form-box">
         <h1>contractor registration form</h1>
+        <?php 
+require '../functions/contractor.php';
+$c = new Contractor();
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $c->insert($_POST);
+}
+?>
         <h2>-------------------- contractor details --------------------</h2>
         <form action="" method="post">
             <label for="company name">company name : 
@@ -41,7 +49,7 @@
                     <option value="type 3">type 3</option>
                 </select>
             </label>
-        </form>
+        
         <br>
         <h2>-------------------- company representative details --------------------</h2>
         <br>
@@ -84,6 +92,7 @@
         <br>
         <button type="reset">reset</button>
         <button type="submit">register</button>
+        </form>
     </div>
 </body>
 </html>

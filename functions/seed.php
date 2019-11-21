@@ -28,7 +28,7 @@ class Seed extends Connect{
 
     public function createRole(){
         $sql = "CREATE TABLE IF NOT EXISTS `role` (
-            `role_id` INT(11) PRIMARY KEY,
+            `role_id` INT(11) PRIMARY KEY AUTO_INCREMENT,
             `name` CHAR(45)
         )";
         $this->link->query($sql);
@@ -36,7 +36,7 @@ class Seed extends Connect{
 
     public function createUser(){
         $sql = "CREATE TABLE IF NOT EXISTS `user` (
-            `user_id` INT(11) PRIMARY KEY,
+            `user_id` INT(11) PRIMARY KEY AUTO_INCREMENT,
             `role_id` INT(11),
             `name` CHAR(145),
             `email` CHAR(45),
@@ -51,7 +51,7 @@ class Seed extends Connect{
 
     public function createContract(){
         $sql = "CREATE TABLE IF NOT EXISTS `contract` (
-            `contract_id` INT(11) PRIMARY KEY,
+            `contract_id` INT(11) PRIMARY KEY AUTO_INCREMENT,
             `contract_no` CHAR(10),
             `type` CHAR(45),
             `date-created` DATE,
@@ -70,7 +70,7 @@ class Seed extends Connect{
 
     public function createContractor(){
         $sql = "CREATE TABLE IF NOT EXISTS `contractor` (
-            `contractor_id` INT(11) PRIMARY KEY,
+            `contractor_id` INT(11) PRIMARY KEY AUTO_INCREMENT,
             `user_id` INT(11),
             `company_name` CHAR(145),
             `tax_number` CHAR(45),
@@ -88,7 +88,7 @@ class Seed extends Connect{
 
     public function createBids(){
         $sql = "CREATE TABLE IF NOT EXISTS bids (
-            `bid_id` INT(11) PRIMARY KEY,
+            `bid_id` INT(11) PRIMARY KEY AUTO_INCREMENT,
             `contracted` INT(11),
             `contractor_id` INT(11),
             `amount` DECIMAL(10,2),
@@ -103,7 +103,7 @@ class Seed extends Connect{
     public function createBidMember(){
         $sql = "CREATE TABLE IF NOT EXISTS `bidmember` (
             `member_name` CHAR(145),
-            `member_id` INT(11) PRIMARY KEY,
+            `member_id` INT(11) PRIMARY KEY AUTO_INCREMENT,
             `member_area` CHAR(45),
             `member_level` CHAR(14),
             `member_address` CHAR(255),
@@ -114,7 +114,7 @@ class Seed extends Connect{
 
     public function createEvaluationCriteria(){
         $sql = "CREATE TABLE IF NOT EXISTS `evaluationcriteria` (
-            `evaluation_criteria_id` INT(11) PRIMARY KEY,
+            `evaluation_criteria_id` INT(11) PRIMARY KEY AUTO_INCREMENT,
             `contracted` INT(11),
             `criteria_name` CHAR(75),
             `category` CHAR(45),
