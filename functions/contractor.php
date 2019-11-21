@@ -12,7 +12,6 @@ class Contractor extends Connect{
 
     $sql = "INSERT INTO `contractor` 
         (
-            `user_id`,
             `company_name`,
             `tax_number`,
             `cert_no_of_inc`,
@@ -23,13 +22,11 @@ class Contractor extends Connect{
             `business_nature`,
             `approved`
         ) VALUES (
-            1,
             $val,
-            0
+            true
         )";
 
     $this->link->query($sql);
-
-    var_dump($sql);
+    header('location: ../pages/');
     }
 }

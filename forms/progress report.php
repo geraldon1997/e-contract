@@ -6,6 +6,7 @@
     
     </head>
     <body>
+    <h3><a href="../pages/">GO BACK</a></h3>
         <div class="form-box">
             <h1>progress report form</h1>
 

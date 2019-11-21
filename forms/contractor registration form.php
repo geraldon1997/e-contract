@@ -1,4 +1,11 @@
+<?php 
+require '../functions/contractor.php';
+$c = new Contractor();
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $c->insert($_POST);
+}
 
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,42 +13,36 @@
     <title>contractor registration form</title>
 </head>
 <body>
+<h3><a href="../pages/">GO BACK</a></h3>
     <div class="form-box">
         <h1>contractor registration form</h1>
-        <?php 
-require '../functions/contractor.php';
-$c = new Contractor();
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $c->insert($_POST);
-}
-?>
         <h2>-------------------- contractor details --------------------</h2>
         <form action="" method="post">
-            <label for="company name">company name : 
+            <label for="company name">company name : <br>
                 <input type="text" name="cn" id="">
             </label>
             <br>
-            <label for="tax no">tax no : 
+            <label for="tax no">tax no : <br>
                 <input type="text" name="tn" id="">
             </label>
             <br>
-            <label for="cert no of inc">cert no of inc : 
+            <label for="cert no of inc">cert no of inc :<br> 
                 <input type="text" name="cnoi" id="">
             </label>
             <br>
-            <label for="address">address : 
+            <label for="address">address : <br>
                 <input type="text" name="addr" id="">
             </label>
             <br>
-            <label for="phone no">phone no : 
+            <label for="phone no">phone no : <br>
                 <input type="tel" name="pn" id="">
             </label>
             <br>
-            <label for="e-mail">e-mail : 
+            <label for="e-mail">e-mail : <br>
                 <input type="email" name="email" id="">
             </label>
             <br>
-            <label for="business type">business type : 
+            <label for="business type">business type : <br>
                 <select name="bt" id="">
                     <option value="">-------------------- select business type --------------------</option>
                     <option value="type 1">type 1</option>
@@ -49,50 +50,53 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <option value="type 3">type 3</option>
                 </select>
             </label>
-        
+        <br>
+        <label for="business nature">business nature : <br>
+            <input type="text" name="bn" id="" />
+        </label>
         <br>
         <h2>-------------------- company representative details --------------------</h2>
         <br>
-        <label for="last name">last name : 
+        <label for="last name">last name : <br>
             <input />
         </label>
         <br>
-        <label for="first name">first name : 
+        <label for="first name">first name : <br>
             <input />
         </label>
         <br>
-        <label for="sex">sex : 
+        <label for="sex">sex : <br>
             <select>
                 <option>male</option>
                 <option>female</option>
             </select>
         </label>
         <br>
-        <label for="email">email : 
+        <label for="email">email : <br>
             <input />
         </label>
         <br>
-        <label for="phone no">phone no : 
+        <label for="phone no">phone no :<br> 
             <input />
         </label>
         <br>
         <h2>---------------------------------------- login details ----------------------------------------</h2>
         <br>
-        <label for="username">username : 
+        <label for="username">username : <br>
             <input />
         </label>
         <br>
-        <label for="password">password : 
+        <label for="password">password : <br>
             <input />
         </label>
         <br>
-        <label for="confirm password">confirm password : 
+        <label for="confirm password">confirm password : <br>
             <input />
         </label>
         <br>
         <button type="reset">reset</button>
         <button type="submit">register</button>
-        </form>
+</form>
     </div>
 </body>
 </html>
