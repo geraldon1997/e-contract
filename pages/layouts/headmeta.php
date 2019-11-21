@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="layouts/style.css">
+        <link rel="stylesheet" href="http://localhost/e-contract/pages/layouts/style.css">
     </head>
     <body>
