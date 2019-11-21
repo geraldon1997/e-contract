@@ -1,5 +1,12 @@
 <?php
 require 'functions/seed.php';
+require 'functions/logs.php';
+$log = new Log();
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $log->login($_POST['user'],$_POST['pass']);    
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -53,11 +60,11 @@ require 'functions/seed.php';
         <h1>LOGIN FORM</h1>
             <form action="" method="post">
                 <label for="username">username : 
-                    <input type="text" name="username" id="">
+                    <input type="text" name="user" id="">
                 </label>
                 <br>
                 <label for="password">password : 
-                    <input type="password" name="" id="">
+                    <input type="password" name="pass" id="">
                 </label>
                 <br>
                 <button type="submit">Login</button>

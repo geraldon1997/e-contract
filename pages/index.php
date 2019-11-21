@@ -1,5 +1,8 @@
 <?php
-
+session_start();
+if (!isset($_SESSION['user'])) {
+    header('location: http://localhost/e-contract/');
+}
 require 'layouts/config.php';
 
 startPage();
