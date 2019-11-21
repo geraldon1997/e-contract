@@ -1,9 +1,9 @@
 <?php 
-require '../../functions/contractor.php';
+require '../../functions/contract.php';
 require '../layouts/config.php';
 startPage();
 ?>
-<a href="../../forms/contractor creation form.php" 
+<a href="../../forms/contract creation form.php" 
     style="
         width:10%; 
         margin-left:20px; 
@@ -15,19 +15,19 @@ startPage();
         font-weight: bold;
         padding:5px;
         border-radius:5px;"
-    >register contractor</a>
+    >create contract</a>
     <hr>
 <div class="details">
     <table border=1>
-        <th>S / N</th>
-        <th>company name</th>
-        <th>tax no</th>
-        <th>address</th>
-        <th>business type</th>
-        <th>business nature</th>
-        <?php 
-            $c = new Contractor(); 
-            $c->read(); 
+        <th>contract no</th>
+        <th>subject</th>
+        <th>sender</th>
+        <th>expire date</th>
+        <th>type</th>
+        <th>status</th>
+        <?php
+            $c = new Contract();
+            $c->read();
         ?>
     </table>
 </div>

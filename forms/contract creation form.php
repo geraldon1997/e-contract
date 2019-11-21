@@ -1,3 +1,11 @@
+<?php 
+require '../functions/contract.php';
+$c = new Contract();
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $c->insert($_POST);
+}
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +18,7 @@
     <h1>contract creation form</h1>
     <form action="" method="post">
         <label for="contract no">contract no : <br>
-            <input type="number" name="" id="">
+            <input type="number" name="cn" id="">
         </label>
         <br>
         <label for="type">type : <br>
@@ -39,7 +47,7 @@
         </label>
         <br>
         <label for="bid document">bid document : <br>
-            <input type="file" name="bd" id="">
+            <input type="file">
         </label>
         <br>
         <button type="reset">reset</button>
