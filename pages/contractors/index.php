@@ -3,7 +3,7 @@ require '../../functions/contractor.php';
 require '../layouts/config.php';
 startPage();
 ?>
-<a href="../../forms/contractor creation form.php" 
+<a href="../../forms/contractor registration form.php" 
     style="
         width:10%; 
         margin-left:20px; 
